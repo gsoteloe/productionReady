@@ -1,0 +1,52 @@
+<svg viewBox="0 0 620 380" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, Fira Code, monospace">
+
+  <!-- Background -->
+  <rect width="620" height="380" fill="#ffffff" rx="12"/>
+
+  <!-- Title -->
+  <text x="310" y="36" text-anchor="middle" font-size="13" font-weight="700" fill="#0A2540" letter-spacing="-0.3">Expansión ndots:5 — api.stripe.com (2 puntos)</text>
+  <text x="310" y="54" text-anchor="middle" font-size="10" fill="#94A3B8">Cada query se intenta en orden hasta obtener respuesta válida</text>
+
+  <!-- Query original -->
+  <rect x="30" y="70" width="200" height="36" rx="6" fill="#EEF0FF" stroke="#635BFF" stroke-width="1.5"/>
+  <text x="130" y="88" text-anchor="middle" font-size="10" font-weight="700" fill="#635BFF">curl api.stripe.com</text>
+  <text x="130" y="101" text-anchor="middle" font-size="9" fill="#425466">nombre con 2 puntos → ndots:5 activa</text>
+
+  <!-- Arrow right -->
+  <line x1="230" y1="88" x2="260" y2="88" stroke="#CBD5E1" stroke-width="1.5"/>
+  <polygon points="258,83 268,88 258,93" fill="#CBD5E1"/>
+
+  <!-- Queries box -->
+  <rect x="270" y="62" width="320" height="250" rx="8" fill="#F6F8FA" stroke="#E6EBF1" stroke-width="1"/>
+  <text x="430" y="82" text-anchor="middle" font-size="10" font-weight="700" fill="#0A2540">Queries generadas</text>
+
+  <!-- Query 1 - NXDOMAIN -->
+  <rect x="284" y="92" width="292" height="44" rx="6" fill="#FEF2F2" stroke="#FECACA" stroke-width="1"/>
+  <text x="290" y="110" font-size="9" font-weight="700" fill="#DC2626">① api.stripe.com.default.svc.cluster.local</text>
+  <text x="290" y="126" font-size="9" fill="#94A3B8">→ NXDOMAIN · +search domain namespace</text>
+
+  <!-- Query 2 - NXDOMAIN -->
+  <rect x="284" y="144" width="292" height="44" rx="6" fill="#FEF2F2" stroke="#FECACA" stroke-width="1"/>
+  <text x="290" y="162" font-size="9" font-weight="700" fill="#DC2626">② api.stripe.com.svc.cluster.local</text>
+  <text x="290" y="178" font-size="9" fill="#94A3B8">→ NXDOMAIN · +search domain cluster</text>
+
+  <!-- Query 3 - NXDOMAIN -->
+  <rect x="284" y="196" width="292" height="44" rx="6" fill="#FEF2F2" stroke="#FECACA" stroke-width="1"/>
+  <text x="290" y="214" font-size="9" font-weight="700" fill="#DC2626">③ api.stripe.com.cluster.local</text>
+  <text x="290" y="230" font-size="9" fill="#94A3B8">→ NXDOMAIN · +search domain base</text>
+
+  <!-- Query 4 - OK -->
+  <rect x="284" y="248" width="292" height="44" rx="6" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1"/>
+  <text x="290" y="266" font-size="9" font-weight="700" fill="#16A34A">④ api.stripe.com.</text>
+  <text x="290" y="282" font-size="9" fill="#16A34A">→ respuesta válida · nombre absoluto</text>
+
+  <!-- Cost label -->
+  <rect x="30" y="330" width="560" height="34" rx="6" fill="#FFF7ED" stroke="#FED7AA" stroke-width="1"/>
+  <text x="310" y="348" text-anchor="middle" font-size="10" fill="#92400E">
+    4 queries UDP por cada resolución · con ndots:2 → solo 1 query
+  </text>
+  <text x="310" y="360" text-anchor="middle" font-size="9" fill="#94A3B8">
+    La secuencia exacta varía según el resolver del runtime (cgo vs pure Go, musl, etc.)
+  </text>
+
+</svg>

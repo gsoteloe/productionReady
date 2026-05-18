@@ -1,4 +1,38 @@
 baseURL: https://example.org/
-locale: en-us
-title: My New Hugo Project
+title: " "
+locale: es-mx
 theme: ["PaperMod"]
+
+params:
+  disableThemeToggle: true
+  label:
+    icon: "images/logo.svg"
+    iconHeight: 40
+    text: ""
+  homeInfoParams:
+    Title: "Hola 👋, soy Gerardo."
+    Content: >
+
+      Te doy la bienvenida a mi blog. Escribo sobre Cloud, Kubernetes, Networking, PKI e
+      Incident Management: todo lo que aprendes cuando las
+      cosas fallan en producción.
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/gsoteloe"
+    - name: linkedin
+      url: "https://linkedin.com/in/gsoteloe"
+    - name: rss
+      url: "/index.xml"
+
+menu:
+  main:
+    - name: Artículos
+      url: /posts/
+      weight: 1
+    - name: Tags
+      url: /tags/
+      weight: 2
+    - name: Acerca de
+      url: /about/
+      weight: 3

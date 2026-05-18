@@ -1,0 +1,85 @@
+<svg viewBox="0 0 620 520" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, Fira Code, monospace">
+
+  <!-- Background -->
+  <rect width="620" height="520" fill="#ffffff" rx="12"/>
+
+  <!-- Title -->
+  <text x="310" y="36" text-anchor="middle" font-size="13" font-weight="700" fill="#0A2540" letter-spacing="-0.3">Flujo de resolución DNS en Kubernetes</text>
+
+  <!-- Pod -->
+  <rect x="200" y="60" width="220" height="56" rx="8" fill="#EEF0FF" stroke="#635BFF" stroke-width="1.5"/>
+  <text x="310" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#635BFF">Pod</text>
+  <text x="310" y="101" text-anchor="middle" font-size="10" fill="#425466">proceso / aplicación</text>
+
+  <!-- Arrow 1 -->
+  <line x1="310" y1="116" x2="310" y2="148" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="304,146 310,158 316,146" fill="#CBD5E1"/>
+  <text x="324" y="136" font-size="9" fill="#94A3B8">delega query</text>
+
+  <!-- /etc/resolv.conf -->
+  <rect x="200" y="160" width="220" height="56" rx="8" fill="#F6F8FA" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="310" y="184" text-anchor="middle" font-size="11" font-weight="700" fill="#0A2540">/etc/resolv.conf</text>
+  <text x="310" y="201" text-anchor="middle" font-size="10" fill="#425466">stub resolver (inyectado por kubelet)</text>
+
+  <!-- Arrow 2 -->
+  <line x1="310" y1="216" x2="310" y2="248" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="304,246 310,258 316,246" fill="#CBD5E1"/>
+  <text x="324" y="236" font-size="9" fill="#94A3B8">UDP :53</text>
+
+  <!-- CoreDNS Service -->
+  <rect x="200" y="260" width="220" height="56" rx="8" fill="#F6F8FA" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="310" y="284" text-anchor="middle" font-size="11" font-weight="700" fill="#0A2540">CoreDNS Service</text>
+  <text x="310" y="301" text-anchor="middle" font-size="10" fill="#425466">ClusterIP · kube-system</text>
+
+  <!-- Arrow 3 -->
+  <line x1="310" y1="316" x2="310" y2="348" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="304,346 310,358 316,346" fill="#CBD5E1"/>
+
+  <!-- CoreDNS Pod -->
+  <rect x="200" y="360" width="220" height="56" rx="8" fill="#F6F8FA" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="310" y="384" text-anchor="middle" font-size="11" font-weight="700" fill="#0A2540">CoreDNS Pod</text>
+  <text x="310" y="401" text-anchor="middle" font-size="10" fill="#425466">Deployment · 2 réplicas (default)</text>
+
+  <!-- Arrow 4 - condicional -->
+  <line x1="310" y1="416" x2="310" y2="448" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="304,446 310,458 316,446" fill="#CBD5E1"/>
+  <text x="324" y="436" font-size="9" fill="#94A3B8">si nombre externo</text>
+
+  <!-- Upstream resolver -->
+  <rect x="200" y="460" width="220" height="44" rx="8" fill="#F6F8FA" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="310" y="484" text-anchor="middle" font-size="11" font-weight="700" fill="#0A2540">Upstream resolver</text>
+  <text x="310" y="497" text-anchor="middle" font-size="10" fill="#425466">cloud DNS / 8.8.8.8 / etc.</text>
+
+  <!-- Failure points annotations -->
+  <!-- Point 1 -->
+  <circle cx="172" cy="188" r="10" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="172" y="193" text-anchor="middle" font-size="10" font-weight="700" fill="#92400E">1</text>
+  <text x="156" y="174" text-anchor="end" font-size="9" fill="#92400E">NetworkPolicy</text>
+
+  <!-- Point 2 -->
+  <circle cx="172" cy="288" r="10" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="172" y="293" text-anchor="middle" font-size="10" font-weight="700" fill="#92400E">2</text>
+  <text x="156" y="274" text-anchor="end" font-size="9" fill="#92400E">conntrack</text>
+
+  <!-- Point 3 -->
+  <circle cx="172" cy="388" r="10" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="172" y="393" text-anchor="middle" font-size="10" font-weight="700" fill="#92400E">3</text>
+  <text x="156" y="374" text-anchor="end" font-size="9" fill="#92400E">CPU throttle</text>
+
+  <!-- Point 4 -->
+  <circle cx="172" cy="482" r="10" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="172" y="487" text-anchor="middle" font-size="10" font-weight="700" fill="#92400E">4</text>
+  <text x="156" y="468" text-anchor="end" font-size="9" fill="#92400E">rate limit</text>
+
+  <!-- Legend -->
+  <rect x="440" y="160" width="160" height="110" rx="8" fill="#F6F8FA" stroke="#E6EBF1" stroke-width="1"/>
+  <text x="520" y="180" text-anchor="middle" font-size="10" font-weight="700" fill="#0A2540">Puntos de fallo</text>
+  <circle cx="456" cy="198" r="7" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="456" y="202" text-anchor="middle" font-size="9" font-weight="700" fill="#92400E">N</text>
+  <text x="468" y="202" font-size="9" fill="#425466">fallo potencial</text>
+  <line x1="450" y1="220" x2="470" y2="220" stroke="#635BFF" stroke-width="1.5"/>
+  <rect x="450" y="214" width="20" height="12" rx="3" fill="#EEF0FF" stroke="#635BFF" stroke-width="1"/>
+  <text x="476" y="224" font-size="9" fill="#425466">origen</text>
+  <rect x="450" y="234" width="20" height="12" rx="3" fill="#F6F8FA" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="476" y="244" font-size="9" fill="#425466">intermediario</text>
+</svg>

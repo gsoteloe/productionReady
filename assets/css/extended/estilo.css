@@ -1,0 +1,446 @@
+/* ============================================
+   Production Ready — Stripe Engineering Theme
+   Para: Hugo PaperMod
+   Archivo: assets/css/extended/stripe.css
+   ============================================ */
+
+/* --- Google Fonts --- */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&display=swap");
+
+/* --- Paleta de colores --- */
+:root {
+    --stripe-white: #ffffff;
+    --stripe-bg: #f6f8fa;
+    --stripe-black: #0a2540;
+    --stripe-body: #425466;
+    --stripe-purple: #635bff;
+    --stripe-purple-dark: #4f46e5;
+    --stripe-purple-soft: #eef0ff;
+    --stripe-border: #e6ebf1;
+    --stripe-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --stripe-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+    --stripe-radius: 8px;
+}
+
+/* --- Base --- */
+body {
+    background-color: var(--stripe-white) !important;
+    color: var(--stripe-body) !important;
+    font-family:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif !important;
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+/* --- Header / Nav --- */
+header.header {
+    background-color: rgba(255, 255, 255, 0.92) !important;
+    border-bottom: 1px solid var(--stripe-border) !important;
+    box-shadow: none !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+}
+
+/* Logo */
+.logo a {
+    font-family: "Inter", sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    color: var(--stripe-black) !important;
+    letter-spacing: -0.02em !important;
+    text-decoration: none !important;
+}
+
+/* Nav links */
+.menu a {
+    font-family: "Inter", sans-serif !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    color: var(--stripe-body) !important;
+    text-decoration: none !important;
+    padding: 4px 0 !important;
+    border-bottom: 2px solid transparent !important;
+    transition:
+        color 0.15s ease,
+        border-color 0.15s ease !important;
+}
+
+.menu a:hover {
+    color: var(--stripe-purple) !important;
+    border-bottom-color: var(--stripe-purple) !important;
+}
+
+/* --- Headings --- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.post-title,
+.entry-title {
+    font-family: "Inter", sans-serif !important;
+    color: var(--stripe-black) !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.03em !important;
+    line-height: 1.2 !important;
+}
+
+h1,
+.post-title {
+    font-size: 2.25rem !important;
+}
+h2 {
+    font-size: 1.5rem !important;
+    margin-top: 2.5rem !important;
+}
+h3 {
+    font-size: 1.2rem !important;
+}
+
+/* Línea acento bajo h2 */
+.post-content h2 {
+    padding-bottom: 0.5rem !important;
+    border-bottom: 1px solid var(--stripe-border) !important;
+}
+
+/* --- Homepage / Profile --- */
+.profile {
+    padding: 4rem 0 2rem !important;
+}
+
+.profile img {
+    border-radius: var(--stripe-radius) !important;
+    box-shadow: var(--stripe-shadow-md) !important;
+    border: none !important;
+}
+
+.home-info {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 3rem 0 1rem !important;
+}
+
+.home-info .entry-content p {
+    font-size: 1.1rem !important;
+    color: var(--stripe-body) !important;
+    max-width: 600px !important;
+}
+
+/* --- Post cards --- */
+.post-entry {
+    background-color: var(--stripe-white) !important;
+    border: 1px solid var(--stripe-border) !important;
+    border-radius: var(--stripe-radius) !important;
+    box-shadow: var(--stripe-shadow) !important;
+    padding: 1.5rem 2rem !important;
+    transition:
+        box-shadow 0.2s ease,
+        transform 0.2s ease !important;
+}
+
+.post-entry:hover {
+    box-shadow: var(--stripe-shadow-md) !important;
+    transform: translateY(-2px) !important;
+}
+
+.post-entry .entry-title {
+    font-size: 1.1rem !important;
+    color: var(--stripe-black) !important;
+    margin-bottom: 0.4rem !important;
+}
+
+.post-entry .entry-title a:hover {
+    color: var(--stripe-purple) !important;
+}
+
+/* --- Tags --- */
+.post-tags a,
+.terms-tags a {
+    font-family: "Inter", sans-serif !important;
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
+    color: var(--stripe-purple) !important;
+    background-color: var(--stripe-purple-soft) !important;
+    border: none !important;
+    border-radius: 4px !important;
+    padding: 2px 8px !important;
+    text-decoration: none !important;
+    transition: background-color 0.15s ease !important;
+}
+
+.post-tags a:hover,
+.terms-tags a:hover {
+    background-color: var(--stripe-purple) !important;
+    color: var(--stripe-white) !important;
+}
+
+/* --- Post individual --- */
+.post-header {
+    padding-bottom: 2rem !important;
+    margin-bottom: 2rem !important;
+    border-bottom: 1px solid var(--stripe-border) !important;
+}
+
+.post-meta,
+.post-meta span {
+    font-family: "Inter", sans-serif !important;
+    font-size: 0.8rem !important;
+    color: var(--stripe-body) !important;
+    opacity: 0.7 !important;
+}
+
+/* Cuerpo del artículo */
+.post-content {
+    font-family: "Inter", sans-serif !important;
+    font-size: 1rem !important;
+    line-height: 1.8 !important;
+    color: var(--stripe-body) !important;
+    max-width: 68ch !important;
+}
+
+/* Links en contenido */
+.post-content a {
+    color: var(--stripe-purple) !important;
+    text-decoration: underline !important;
+    text-decoration-color: rgba(99, 91, 255, 0.3) !important;
+    text-underline-offset: 3px !important;
+    transition: text-decoration-color 0.15s ease !important;
+}
+
+.post-content a:hover {
+    text-decoration-color: var(--stripe-purple) !important;
+}
+
+/* --- Código --- */
+pre,
+code {
+    font-family: "JetBrains Mono", "Fira Code", monospace !important;
+    border-radius: var(--stripe-radius) !important;
+}
+
+pre {
+    background-color: #0a2540 !important;
+    color: #cbd5e1 !important;
+    border: none !important;
+    box-shadow: var(--stripe-shadow-md) !important;
+    padding: 1.5rem !important;
+    overflow-x: auto !important;
+    font-size: 0.875rem !important;
+    line-height: 1.6 !important;
+}
+
+/* Barra superior decorativa en bloques de código */
+pre::before {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 3px;
+    background: linear-gradient(90deg, #635bff, #8b5cf6);
+    border-radius: 2px;
+    margin-bottom: 1rem;
+}
+
+code:not(pre code) {
+    background-color: var(--stripe-purple-soft) !important;
+    color: var(--stripe-purple-dark) !important;
+    border: none !important;
+    border-radius: 4px !important;
+    padding: 2px 6px !important;
+    font-size: 0.875em !important;
+}
+
+/* --- Blockquotes --- */
+blockquote {
+    border-left: 3px solid var(--stripe-purple) !important;
+    background-color: var(--stripe-purple-soft) !important;
+    border-radius: 0 var(--stripe-radius) var(--stripe-radius) 0 !important;
+    padding: 1rem 1.5rem !important;
+    margin: 1.5rem 0 !important;
+    font-style: italic !important;
+    color: var(--stripe-black) !important;
+    box-shadow: none !important;
+}
+
+/* --- Tablas --- */
+table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    border: 1px solid var(--stripe-border) !important;
+    border-radius: var(--stripe-radius) !important;
+    overflow: hidden !important;
+    font-size: 0.9rem !important;
+    box-shadow: var(--stripe-shadow) !important;
+}
+
+th {
+    background-color: var(--stripe-bg) !important;
+    color: var(--stripe-black) !important;
+    font-family: "Inter", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 0.8rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    padding: 0.75rem 1rem !important;
+    border-bottom: 1px solid var(--stripe-border) !important;
+}
+
+td {
+    border-bottom: 1px solid var(--stripe-border) !important;
+    padding: 0.75rem 1rem !important;
+    color: var(--stripe-body) !important;
+}
+
+tr:last-child td {
+    border-bottom: none !important;
+}
+
+tr:hover td {
+    background-color: var(--stripe-bg) !important;
+}
+
+/* --- Botones --- */
+.btn,
+button,
+input[type="submit"] {
+    font-family: "Inter", sans-serif !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    background-color: var(--stripe-purple) !important;
+    color: var(--stripe-white) !important;
+    border: none !important;
+    border-radius: var(--stripe-radius) !important;
+    padding: 0.5rem 1.2rem !important;
+    cursor: pointer !important;
+    transition:
+        background-color 0.15s ease,
+        box-shadow 0.15s ease !important;
+    box-shadow: 0 1px 3px rgba(99, 91, 255, 0.3) !important;
+}
+
+.btn:hover,
+button:hover,
+input[type="submit"]:hover {
+    background-color: var(--stripe-purple-dark) !important;
+    box-shadow: 0 4px 12px rgba(99, 91, 255, 0.4) !important;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--stripe-white) !important;
+    border-top: 1px solid var(--stripe-border) !important;
+    color: var(--stripe-body) !important;
+    font-family: "Inter", sans-serif !important;
+    font-size: 0.8rem !important;
+}
+
+footer a {
+    color: var(--stripe-purple) !important;
+    text-decoration: none !important;
+}
+
+footer a:hover {
+    text-decoration: underline !important;
+}
+
+/* --- Search --- */
+#searchInput {
+    font-family: "Inter", sans-serif !important;
+    background-color: var(--stripe-white) !important;
+    border: 1px solid var(--stripe-border) !important;
+    border-radius: var(--stripe-radius) !important;
+    color: var(--stripe-black) !important;
+    padding: 0.5rem 1rem !important;
+    box-shadow: var(--stripe-shadow) !important;
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease !important;
+}
+
+#searchInput:focus {
+    border-color: var(--stripe-purple) !important;
+    box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.15) !important;
+    outline: none !important;
+}
+
+/* --- Social icons --- */
+.social-icons a {
+    color: var(--stripe-body) !important;
+    transition: color 0.15s ease !important;
+}
+
+.social-icons a:hover {
+    color: var(--stripe-purple) !important;
+}
+
+/* --- Divisores --- */
+hr {
+    border: none !important;
+    border-top: 1px solid var(--stripe-border) !important;
+    margin: 2rem 0 !important;
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--stripe-bg);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--stripe-border);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--stripe-purple);
+}
+
+/* --- Selección de texto --- */
+::selection {
+    background-color: var(--stripe-purple-soft);
+    color: var(--stripe-purple-dark);
+}
+
+/* --- Dark mode --- */
+.dark body,
+body.dark {
+    background-color: #0a2540 !important;
+    color: #8892a4 !important;
+}
+
+.dark header.header,
+body.dark header.header {
+    background-color: rgba(10, 37, 64, 0.92) !important;
+    border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark .post-entry,
+body.dark .post-entry {
+    background-color: #0d2d4a !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark .post-entry .entry-title,
+body.dark .post-entry .entry-title {
+    color: #e2e8f0 !important;
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+body.dark h1,
+body.dark h2,
+body.dark h3 {
+    color: #e2e8f0 !important;
+}
+
+.dark code:not(pre code),
+body.dark code:not(pre code) {
+    background-color: rgba(99, 91, 255, 0.15) !important;
+    color: #a5b4fc !important;
+}
